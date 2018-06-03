@@ -23,6 +23,7 @@ class AMPMetaExtension extends DataExtension
 		$request = Controller::curr()->getRequest();
 		$ampLink = Controller::join_links($request->getURL(), 'amp.html');
 		$tags .= "<link rel='amphtml' href='$ampLink' /> \n";
+		$tags .= "<link rel='canonical' href='" . $request->getURL() . "' /> \n";
 
 	}
 
