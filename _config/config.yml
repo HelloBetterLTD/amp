@@ -1,0 +1,14 @@
+---
+Name: amp
+---
+
+
+SilverStripe\Control\Controller:
+  extensions:
+    - SilverStripers\AMP\Extensions\AMPControllerExtension
+
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Control\Director:
+    properties:
+          Middlewares:
+            - '%$SilverStripers\AMP\Middleware\AMPMiddleware'
