@@ -1,0 +1,26 @@
+{
+    "name": "silverstripers/apm",
+    "description": "Provide AMP HTML conversion to your SilverStripe project",
+    "type": "silverstripe-vendormodule",
+    "keywords": ["silverstripe", "amp", "conversion"],
+    "license": "BSD-3-Clause",
+    "authors": [
+    {
+        "name": "Nivanka Fonseka",
+        "email": "nivanka@silverstripers.com"
+    }],
+    "require": {
+        "silverstripe/framework": "^4",
+        "lullabot/amp": "1.1.3"
+    },
+    "autoload": {
+        "psr-4": {
+        }
+    },
+    "extra": {
+        "expose": [
+        ],
+        "installer-name": "amp"
+    }
+    
+}
