@@ -1,5 +1,5 @@
 {
-    "name": "silverstripers/apm",
+    "name": "silverstripers/amp",
     "description": "Provide AMP HTML conversion to your SilverStripe project",
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "amp", "conversion"],
