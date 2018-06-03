@@ -10,6 +10,7 @@ SilverStripe\Control\Controller:
 SilverStripe\CMS\Model\SiteTree:
   extensions:
     - SilverStripers\AMP\Extensions\SiteTreeExtension
+    - SilverStripers\AMP\Extensions\AMPMetaExtension
 
 SilverStripe\Core\Injector\Injector:
   SilverStripe\Control\Director:
