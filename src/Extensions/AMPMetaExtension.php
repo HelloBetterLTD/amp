@@ -19,11 +19,11 @@ class AMPMetaExtension extends DataExtension
 
 	public function MetaTags(&$tags)
 	{
-		if(AMPDirector::is_amp()) {
-			$request = Controller::curr()->getRequest();
-			$ampLink = Controller::join_links($request->getURL(), 'amp.html');
-			$tags .= "<link rel='amphtml' href='$ampLink' /> \n";
-		}
+
+		$request = Controller::curr()->getRequest();
+		$ampLink = Controller::join_links($request->getURL(), 'amp.html');
+		$tags .= "<link rel='amphtml' href='$ampLink' /> \n";
+
 	}
 
 }
