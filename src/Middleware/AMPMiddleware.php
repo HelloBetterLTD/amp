@@ -14,11 +14,14 @@ use Lullabot\AMP\AMP;
 use Lullabot\AMP\Validate\Scope;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Control\Middleware\HTTPMiddleware;
+use SilverStripe\Core\Extensible;
 use SilverStripers\AMP\Control\AMPDirector;
 
 
 class AMPMiddleware implements HTTPMiddleware
 {
+
+	use Extensible;
 
 	public function process(HTTPRequest $request, callable $delegate)
 	{
@@ -31,6 +34,7 @@ class AMPMiddleware implements HTTPMiddleware
 				'scope'		=> Scope::HTML_SCOPE
 			]);
 			if($ampHTML = $amp->convertToAmpHtml()) {
+				$this->extend('updateAMPHTML', $ampHTML);
 				$response->setBody($ampHTML);
 			}
 
