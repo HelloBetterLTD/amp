@@ -30,7 +30,7 @@ class AMPDirector
 
 	private static $amp = false;
 
-	private static $amp_allowed = null;
+	private static $amp_allowed = [];
 
 	public static function set_amp($amp = true)
 	{
@@ -49,13 +49,12 @@ class AMPDirector
 
 	public static function is_amp_allowed($class)
     {
-        if(is_null(AMPDirector::$amp_allowed)) {
+        if(is_object($class)) {
+            $class = get_class($class);
+        }
+
+        if(empty(AMPDirector::$amp_allowed[$class])) {
             $ret = false;
-
-            if(is_object($class)) {
-                $class = get_class($class);
-            }
-
             if ($class) {
                 $ret = true;
                 $classes = self::config()->get('allowed_classes');
@@ -69,9 +68,9 @@ class AMPDirector
                     }
                 }
             }
-            AMPDirector::$amp_allowed = $ret;
+            AMPDirector::$amp_allowed[$class] = $ret;
         }
-        return AMPDirector::$amp_allowed;
+        return AMPDirector::$amp_allowed[$class];
     }
 
 

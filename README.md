@@ -11,9 +11,43 @@ AMP HTML⚡ Bundle - provide [AMP HTML](https://www.ampproject.org/) conversion 
 
 Install with composer 
 
+
 ```
 composer require silverstripers/amp dev-master
 ```
+
+### Configurations 
+
+#### Clearing Caches
+
+To clear the amp caches you need to set up an RSA Key. 
+
+Follow the instructions on the AMP Cache guide on [Generating Keys](https://developers.google.com/amp/cache/update-cache#rsa-keys).
+
+To set up the private key use the following YAML configutation
+
+```
+SilverStripers\AMP\Control\AMPCache:
+	key_file: 'PATH_TO_YOUR_PRIVATE_KEY'
+```
+
+#### Setting up class names
+
+The module allows you to set up class name of pages which are supported by AMPs. 
+
+```
+---
+Name: amps
+---
+SilverStripers\AMP\Control\AMPDirector:
+  allowed_classes:
+    - SilverStripe\Blog\Model\Blog
+    - SilverStripe\Blog\Model\BlogPost
+
+```
+
+The configs above limits the amps support to Blog and BlogPost pages.
+
 
 This module adds extensions on for your controllers where the pages will have an AMP based version with a URL suffix 
 for each page. 

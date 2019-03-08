@@ -1,7 +1,9 @@
 ---
 Name: amp
 ---
-
+SilverStripe\CMS\Controllers\CMSMain:
+  extensions:
+    - SilverStripers\AMP\Extensions\CMSMainExtension
 
 SilverStripe\Control\Controller:
   extensions:

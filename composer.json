@@ -11,7 +11,8 @@
     }],
     "require": {
         "silverstripe/framework": "^4",
-        "lullabot/amp": "1.1.4"
+        "lullabot/amp": "1.1.4",
+        "guzzlehttp/guzzle": "6.3.1"
     },
     "autoload": {
         "psr-4": {
