@@ -26,7 +26,7 @@ class CMSMainExtension extends Extension
         $record = $this->getRecord();
         if(AMPDirector::is_amp_allowed($record) && AMPCache::key_exists()) {
             $form->Actions()->insertAfter('action_publish',
-                FormAction::create('clearAMPCache', 'Create AMP ⚡ Cache')
+                FormAction::create('clearAMPCache', 'Clear AMP ⚡ Cache')
                     ->setUseButtonTag(true)
                     ->addExtraClass('btn btn-outline-primary')
             );
