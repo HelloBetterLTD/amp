@@ -10,6 +10,9 @@
 namespace SilverStripers\AMP\Extensions;
 
 
+use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\Control\Controller;
+use SilverStripe\Control\Director;
 use SilverStripe\Core\Extension;
 
 class AMPControllerExtension extends Extension
@@ -19,6 +22,20 @@ class AMPControllerExtension extends Extension
 		'amp'
 	];
 
+	public function onAfterInit()
+    {
+        /* @var $controller Controller */
+        $controller = $this->owner;
+        if(is_a($controller, ContentController::class)) {
+            $request = $controller->getRequest();
+            $controller->getRequest()->setRouteParams(array_merge(
+                $request->routeParams() ? : [],
+                [
+                    'AMPSPage' => get_class(Director::get_current_page())
+                ]
+            ));
+        }
+    }
 
 	public function amp()
 	{
