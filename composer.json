@@ -11,7 +11,8 @@
     }],
     "require": {
         "silverstripe/framework": "^4",
-        "lullabot/amp": "1.1.4"
+        "lullabot/amp": "1.1.4",
+        "masterminds/html5": "2.3.0"
     },
     "autoload": {
         "psr-4": {
