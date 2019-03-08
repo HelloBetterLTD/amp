@@ -24,4 +24,9 @@ class SiteTreeExtension extends DataExtension
 		}
 	}
 
+	public function APMLink($action)
+    {
+
+    }
+
 }
