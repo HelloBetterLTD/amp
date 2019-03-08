@@ -28,15 +28,12 @@ class AMPMiddleware implements HTTPMiddleware
 
 	public function process(HTTPRequest $request, callable $delegate)
 	{
+        $this->detectAmp($request);
 
         /* @var $response HTTPResponse */
 		$response = $delegate($request);
         $routeParams = $request->routeParams();
-        if(!empty($routeParams['AMPSPage']) && AMPDirector::is_amp_allowed($routeParams['AMPSPage'])) {
-            $this->detectAmp($request);
-        }
-
-		if($response && ($body = $response->getbody()) && AMPDirector::is_amp()) {
+		if(!empty($routeParams['AMPSPage']) && AMPDirector::is_amp_allowed($routeParams['AMPSPage']) && $response && ($body = $response->getbody()) && AMPDirector::is_amp()) {
 			$amp = new AMP();
 			$amp->loadHtml($body, [
 				'scope'		=> Scope::HTML_SCOPE
@@ -45,8 +42,6 @@ class AMPMiddleware implements HTTPMiddleware
 				$this->extend('updateAMPHTML', $ampHTML);
 				$response->setBody($ampHTML);
 			}
-//			$body = $this->processInputs($body);
-//			$response->setBody($body);
 		}
 		return $response;
 	}
@@ -62,8 +57,9 @@ class AMPMiddleware implements HTTPMiddleware
 				continue;
 			}
 		}
-
 	}
+
+
 
 
 }

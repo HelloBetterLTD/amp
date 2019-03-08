@@ -79,6 +79,13 @@ Same way you can use the not as well
 <% end_if %>
 ```
 
+## Elemental 
+
+The module supports elemental module. 
+
+If you are having to override the templates for Elemental objects you can have templates with _AMP suffix, when those templates are found the elements gets
+rendered using those.
+
 ## Reporting Issues
 
 Please [create an issue](https://github.com/SilverStripers/amp/issues) for any bugs, or submit merge requests. 
