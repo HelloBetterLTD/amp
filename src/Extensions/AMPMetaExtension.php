@@ -22,9 +22,9 @@ class AMPMetaExtension extends DataExtension
 
         if(AMPDirector::is_amp_allowed($this->owner)) {
             $request = Controller::curr()->getRequest();
-            $ampLink = Controller::join_links($request->getURL(), 'amp.html');
+            $ampLink = Director::absoluteURL(Controller::join_links($request->getURL(), 'amp.html'));
             $tags .= "\n<link rel='amphtml' href='$ampLink' />";
-            $tags .= "\n<link rel='canonical' href='" . $request->getURL() . "' />";
+            // $tags .= "\n<link rel='canonical' href='" . Director::absoluteURL($request->getURL()) . "' />";
         }
 
 	}
