@@ -11,6 +11,7 @@ namespace SilverStripers\AMP\Extensions;
 
 
 use SilverStripe\Control\Controller;
+use SilverStripe\Control\Director;
 use SilverStripe\ORM\DataExtension;
 use SilverStripers\AMP\Control\AMPDirector;
 
