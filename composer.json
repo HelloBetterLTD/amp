@@ -12,8 +12,10 @@
     "require": {
         "silverstripe/framework": "^4",
         "silverstripers/seo": "*",
-        "lullabot/amp": "1.1.4",
-        "guzzlehttp/guzzle": "6.3.1"
+        "guzzlehttp/guzzle": "6.3.1",
+        "masterminds/html5": "^2.7",
+        "lullabot/amp": "^2.0",
+        "deimosindustries/lullabot-amp": "dev-main"
     },
     "autoload": {
         "psr-4": {
