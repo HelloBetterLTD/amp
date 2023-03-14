@@ -38,10 +38,10 @@ class AMPMiddleware implements HTTPMiddleware
 			$amp->loadHtml($body, [
 				'scope'		=> Scope::HTML_SCOPE
 			]);
-// 			if($ampHTML = $amp->convertToAmpHtml()) {
-// 				$this->extend('updateAMPHTML', $ampHTML);
-// 				$response->setBody($ampHTML);
-// 			}
+			if($ampHTML = $amp->convertToAmpHtml()) {
+				$this->extend('updateAMPHTML', $ampHTML);
+				$response->setBody($ampHTML);
+			}
 		}
 		return $response;
 	}
